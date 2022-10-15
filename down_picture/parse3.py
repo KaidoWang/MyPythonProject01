@@ -7,8 +7,6 @@ import re
 import requests
 import io
 
-
-
 # picUrl = []
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -21,7 +19,7 @@ def scanpage(url):
     soup = BeautifulSoup(html)
     pageurls = soup.find_all("a", href=True)
     print("=======")
-    picUrl =[]
+    picUrl = []
     picUrl.append(url)
     for links in pageurls:
         pic = links.get("href");
@@ -75,40 +73,42 @@ def down(url):
 
         download(file_path, pic_url)
 
+
 def scanpage2(url):
-  websiteurl=url
-  html=urllib.request.urlopen(websiteurl).read()
-  soup=BeautifulSoup(html)
-  print("dada:",soup)
-  pageurls=soup.find_all("a",href=True)
-  print("=======")
-  picUrl = []
-  for links in pageurls:
-    pic = links.get("href");
-    if(pic.startswith("/m/")):
-      picUrl.append("http://qq.quantuwang1.com"+pic)
-      #
-      # html = urllib.request.urlopen("http://q.quantuwang1.com"+pic).read()
-      # soup = BeautifulSoup(html)
-      # date1 = soup.find("span")
-      # print(date1.text)
-      #
-  return picUrl
+    websiteurl = url
+    html = urllib.request.urlopen(websiteurl).read()
+    soup = BeautifulSoup(html)
+    print("dada:", soup)
+    pageurls = soup.find_all("a", href=True)
+    print("=======")
+    picUrl = []
+    for links in pageurls:
+        pic = links.get("href");
+        if (pic.startswith("/m/")):
+            picUrl.append("http://qq.quantuwang1.com" + pic)
+            #
+            # html = urllib.request.urlopen("http://q.quantuwang1.com"+pic).read()
+            # soup = BeautifulSoup(html)
+            # date1 = soup.find("span")
+            # print(date1.text)
+            #
+    return picUrl
+
 
 def ppp(url):
     picUrl = scanpage(url)
     print(len(picUrl))
     i = 1
     for url in picUrl[:len(picUrl) - 9]:
-
         down(url)
         print(str(i) + ':' + url)
         i = i + 1
 
+
 if __name__ == '__main__':
     print("begin")
     pp = []
-    pp=scanpage2("http://qq.quantuwang1.com/t/600bcd316870a0b5.html")
+    pp = scanpage2("http://qq.quantuwang1.com/t/600bcd316870a0b5.html")
     print("网页多少个链接")
     print(len(pp))
 
