@@ -74,6 +74,7 @@ def down(url):
 
 
 # http://qq.quantuwang1.com/m/715ce3b102042c56.html
+#wkd_1015
 if __name__ == '__main__':
     picUrl.append("http://qq.quantuwang1.com/m/f00374bc4e414f14.html")
     picUrl = scanpage("http://qq.quantuwang1.com/m/f00374bc4e414f14.html")
