@@ -2,6 +2,7 @@ EBS压测
 
 1:准备工作
     所需工具：
+    
     1:scp -r /Users/bytedance/Downloads/jdk-8u341-linux-x64.tar.gz relay@10.22.253.235:/home/relay/jdk-8u341-linux-x64.tar.gz
     2:scp -r /Users/bytedance/Downloads/vdbench50406 relay@10.22.253.235:/home/relay/vdbench50406
     3:根据文档安装java: https://blog.csdn.net/wcy1900353090/article/details/125121855
