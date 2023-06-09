@@ -76,11 +76,11 @@ def down(url):
 # http://qq.quantuwang1.com/m/715ce3b102042c56.html
 #master
 if __name__ == '__main__':
-    picUrl.append("http://qq.quantuwang1.com/m/f00374bc4e414f14.html")
-    picUrl = scanpage("http://qq.quantuwang1.com/m/f00374bc4e414f14.html")
+    picUrl.append("http://qq.quantuwang1.com/m/72c041612e1ee55d.html")
+    picUrl = scanpage("http://qq.quantuwang1.com/m/72c041612e1ee55d.html")
     print(len(picUrl))
     i = 1
-    for url in picUrl[40:len(picUrl) - 9]:
+    for url in picUrl[:len(picUrl) - 9]:
         time.sleep(3)
         down(url)
         print(str(i) + ':' + url)
